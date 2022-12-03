@@ -15,7 +15,6 @@ const List = ({ task: { id, title, description, completed }}) => {
 
   const handleCompleted = (id) => {
     dispatch(changeCompleted({id}))
-    console.log(curTask);
   }
 
   return (
@@ -30,8 +29,8 @@ const List = ({ task: { id, title, description, completed }}) => {
         defaultChecked={completed}
       />
       <div className="inline-flex gap-2">
-      {curCompleted? <button className="px-1 rounded-md bg-red-600 text-white font-normal" onClick={() => handleDelete(id)}>delete</button> : null}
-      <Link className="p-1 rounded-md bg-purple-500 text-white font-normal" to={`/edit-task/${id}`}>edit</Link>
+      <button className={`px-1 text-white font-normal ${curCompleted?'bg-red-600':'bg-slate-500'}`} onClick={() => handleDelete(id)} disabled={!curCompleted} >delete</button>
+      <Link className="px-1 bg-purple-500 text-white font-normal" to={`/edit-task/${id}`}>edit</Link>
       </div>
       </div>
     </li>

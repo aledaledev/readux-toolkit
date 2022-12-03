@@ -52,10 +52,10 @@ const TaskForm = () => {
     <>
     <Navigation/>
     <div className='w-full py-16'>
-      <form className='flex flex-col gap-5 w-4/6 mx-auto p-5 border border-solid border-gray-400' onSubmit={handleSubmit}>
-      <input type="text" name="title" value={task.title} onChange={handleChange} placeholder='title'/>
-      <textarea name='description' value={task.description} onChange={handleChange} placeholder='description' />
-      <button>save task</button>
+      <form className='flex flex-col gap-5 w-4/6 bg-gray-400 mx-auto p-5 border border-solid border-gray-400' onSubmit={handleSubmit}>
+      <input className='py-1 px-2' type="text" name="title" value={task.title} onChange={handleChange} placeholder='title'/>
+      <textarea className='py-1 px-2 resize-none h-20' name='description' value={task.description} onChange={handleChange} placeholder='description' />
+      <button className='px-1 bg-blue-600 self-center font-normal text-white'>save task</button>
       </form>
     </div>
 
